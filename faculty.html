@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Responsive Sticky Navbar | CodingNepal</title>
+    <title>Maharaj Singh Inter College</title>
 
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <link rel="stylesheet" href="./style.css">
 
@@ -21,31 +21,35 @@
 
 <body class="bg-gray-100">
 
-    <div class="topnav w-full h-9 text-white  overflow-hidden bg-black fixed flex items-center justify-evenly">
+    <div class="topnav w-full h-12 text-white overflow-hidden bg-black fixed flex items-center justify-center">
 
-        <div class="mail border-r-1 h-full  overflow-hidden flex items-center justify-center w-full">
+        <div class="mail border-r-1 h-full overflow-hidden flex flex-wrap items-center w-full">
+          <p class="ml-4 font-semibold text-sm mb-2">
             <i class="fas fa-envelope-open-text text-white"></i>
-            <p class="ml-4 font-semibold text-sm">
-                mrcigangdaspur1075@gmail.com
-            </p>
+            <span class="ml-2">
+              mrcigangdaspur1075@gmail.com
+            </span>
+          </p>
         </div>
-
-        <div class="phone border-r-1 h-full  overflow-hidden w-full flex items-center justify-center">
+    
+        <div class="phone border-r-1 h-full overflow-hidden w-full flex items-center flex-wrap">
+          <p class="ml-2 font-semibold text-sm">
             <i class="fas fa-phone-alt text-white"></i>
-            <p class="ml-4 font-semibold text-sm">
-                9456671578 , 6395419808
-            </p>
+            <span class="ml-1">
+              9456671578,6395419808
+            </span>
+          </p>
         </div>
-
+    
         <div class="board border-r-1 h-full bg-red-500 items-center flex overflow-hidden w-full">
-            <p class="ml-4 font-semibold text-sm ">
-                CBSE Mandatory Public Closure
-            </p>
+          <p class="ml-4 font-semibold text-sm ">
+            U.P. Board Affiliated
+          </p>
         </div>
+    
+      </div>
 
-    </div>
-
-    <nav class="navbar z-50 top-9">
+    <nav class="navbar z-50 top-12">
 
         <div class="content">
             <div class="logo"><a href="index.html">
@@ -86,11 +90,34 @@
                 <h1 class="sm:text-4xl text-5xl font-bold title-font mb-4 text-gray-900">
                     Our Faculties
                 </h1>
-
             </div>
 
             
+<section class="container mx-auto p-6 font-mono">
+    <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+            <th class="px-4 py-3">No</th>
+              <th class="px-4 py-3">Name</th>
+              <th class="px-4 py-3">Designation</th>
+              <th class="px-4 py-3">Subject</th>
+              <th class="px-4 py-3">Date Of Birth</th>
+              <th class="px-4 py-3">Date Of Joining</th>
+              <th class="px-4 py-3">Date Of Retier</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+   
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
             
+
             
         </div>
     </section>
@@ -106,6 +133,146 @@
     </footer>
 
     <script src="./script.js"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+    <script>
+
+        const file_path = "./data.csv";
+
+        d3.csv(file_path, function(data) {
+           
+            const table = document.querySelector("table");
+
+            data.forEach(function(d) {
+
+                // create tabke as above in comments 
+                const tr = document.createElement("tr");
+
+                const td_no= document.createElement("td");
+                td_no.classList.add("px-4", "py-3", "border");
+                td_no.innerHTML = `
+                <div class="flex items-center text-sm">
+                  <div class="relative w-8 h-8 mr-3 rounded-full">                   
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">${d.No}</p>
+                  </div>
+                </div>
+                `;
+
+                const td_name = document.createElement("td");
+                td_name.classList.add("px-4", "py-3", "border");
+                td_name.innerHTML = `
+                <div class="flex items-center text-sm">
+                  <div class="relative w-8 h-8 mr-3 rounded-full">                   
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">${d.Name}</p>
+                  </div>
+                </div>
+                `;
+
+                const td_designation = document.createElement("td");
+                td_designation.classList.add("px-4", "py-3", "border");
+                td_designation.innerHTML = `
+                <div class="flex items-center text-sm">
+                  <div class="relative w-8 h-8 mr-3 rounded-full">                   
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">${d.Designation}</p>
+                  </div>
+                </div>
+                `;
+
+                const td_subject = document.createElement("td");
+                td_subject.classList.add("px-4", "py-3", "border");
+                td_subject.innerHTML = `
+                <div class="flex items-center text-sm">
+                  <div class="relative w-8 h-8 mr-3 rounded-full">                   
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">${d.Subject}</p>
+                  </div>
+                </div>
+                `;
+
+                const td_dob = document.createElement("td");
+                td_dob.classList.add("px-4", "py-3", "border");
+                td_dob.innerHTML = `
+                <div class="flex items-center text-sm">
+                  <div class="relative w-8 h-8 mr-3 rounded-full">                   
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">${d.DOB}</p>
+                  </div>
+                </div>
+                `;
+
+                const td_doj = document.createElement("td");
+                td_doj.classList.add("px-4", "py-3", "border");
+                td_doj.innerHTML = `
+                <div class="flex items-center text-sm">
+                  <div class="relative w-8 h-8 mr-3 rounded-full">                   
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">${d.DOJ}</p>
+                  </div>
+                </div>
+                `;
+
+                const td_dor = document.createElement("td");
+                td_dor.classList.add("px-4", "py-3", "border");
+                td_dor.innerHTML = `
+                <div class="flex items-center text-sm">
+                  <div class="relative w-8 h-8 mr-3 rounded-full">                   
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">${d.DOR}</p>
+                  </div>
+                </div>
+                `;
+
+                tr.appendChild(td_no);
+                tr.appendChild(td_name);
+                tr.appendChild(td_designation);
+                tr.appendChild(td_subject);
+                tr.appendChild(td_dob);
+                tr.appendChild(td_doj);
+                tr.appendChild(td_dor);
+
+                table.appendChild(tr);
+                
+                
+              
+                
+            });
+
+
+        });
+
+        
+        
+       
+        
+
+
+    </script>
+
+
+
+
+
 </body>
+
+
 
 </html>
