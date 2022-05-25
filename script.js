@@ -23,9 +23,9 @@ cancelBtn.onclick = () => {
 window.onscroll = () => {
   if (window.scrollY > 350) {
     document.querySelector(".topnav").classList.add("hidden");
-    navbar.classList.remove("top-9");
+    navbar.classList.remove("top-12");
   } else {
     document.querySelector(".topnav").classList.remove("hidden");
-    navbar.classList.add("top-9");
+    navbar.classList.add("top-12");
   };
 }
